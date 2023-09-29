@@ -1,0 +1,21 @@
+#title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+#final {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+#mixed-message {
+    text-align: center;
+    padding-top: 100px;
+}
+
+#closing {
+    position: absolute;
+    top: 500px;
+}
