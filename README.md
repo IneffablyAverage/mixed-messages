@@ -12,18 +12,18 @@ after that if you would like to load a new message, you can either reload the pa
 
 ## How It Works
 
+
+
+To run this program you must have an API Key from API-Ninjas.com 
+Im not affiliated with them. They're just the first random word api I found.
+once you have an API Key create a .env file in the root directory with the following format
+
+    API_KEY={your api key}
+
+replace {your api key} with your api key
+
+
+boot the proxy server before running the html document.
+
+
 "the quick brown fox jumps over the lazy dog" is the base sentance being used to assemble the unique messages 
-within that sentance there are several word types that get swapped out:
-
-- adjective1 "quick"
-- adjective2 "brown"
-- noun1 "fox"
-- verb (past) "jumped"
-- positiononal preposition "over"
-- adjective3 "lazy"
-- noun2 "dog"
-
-within the js file you can find lists of adjectives, nouns, verbs, etc. that will be randomly selected to build the outbound message
-
-
-
