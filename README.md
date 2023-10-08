@@ -12,9 +12,10 @@ after that if you would like to load a new message, you can either reload the pa
 
 ## How It Works
 
+
+
 To run this program you must have an API Key from API-Ninjas.com 
 Im not affiliated with them. They're just the first random word api I found.
-
 once you have an API Key create a .env file in the root directory with the following format
 
     API_KEY={your api key}
