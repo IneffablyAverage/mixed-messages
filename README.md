@@ -13,4 +13,17 @@ after that if you would like to load a new message, you can either reload the pa
 ## How It Works
 
 "the quick brown fox jumps over the lazy dog" is the base sentance being used to assemble the unique messages 
+within that sentance there are several word types that get swapped out:
+
+- adjective1 "quick"
+- adjective2 "brown"
+- noun1 "fox"
+- verb (past) "jumped"
+- positiononal preposition "over"
+- adjective3 "lazy"
+- noun2 "dog"
+
+within the js file you can find lists of adjectives, nouns, verbs, etc. that will be randomly selected to build the outbound message
+
+
 
