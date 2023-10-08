@@ -8,6 +8,15 @@ let resetButton = document.querySelector("#reset");
 
 let message = document.querySelector("#mixed-message");
 
+let progressBar = document.querySelector("#progress");
+
+let done = document.querySelector("#done");
+
+let toDo = document.querySelector("#not-done");
+let toDoString = toDo.innerHTML;
+
+let readyMessage = document.querySelector("#ready");
+
 
 import { generateMessage } from "./utilities.js";
 import { getWordByType } from "./randomWordsAPI.js";
@@ -27,13 +36,25 @@ function conjugateToPastTense(verb) {
 
 const generateWordsByType = async (type) => {
     let words = [];
-    for(let i = 0; i < 50; i ++){
+    let doneString = "";
+    for(let i = 0; i <= 5; i ++){
+        if (!(i % 1)){
+            doneString += "~~ ~~ ";
+            done.innerHTML = doneString;
+
+            toDoString = toDoString.slice(3, toDoString.length);
+            toDo.innerHTML = toDoString;
+        }
         let word = (await getWordByType(type)).word;
         if (type === "verb"){
             word = conjugateToPastTense(word);
         }
         words.push(word);
     }
+    doneString += "~~ ~~";
+    done.innerHTML = doneString;
+
+    toDo.innerHTML = '';
     return words;
 }
 
@@ -50,6 +71,7 @@ Promise.all([
       nouns:nouns,
       posi_preps: ["over", "under", "through", "around", "beside", "on top of", "behind", "inside of"]
     }
+    readyMessage.setAttribute("style", "display: block");
   });
 
 resetButton.onclick = () => {
@@ -57,11 +79,17 @@ resetButton.onclick = () => {
 };  
 
 playButton.onclick = () => {
+    if(done.innerHTML == "~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~"){
+    message.innerHTML = `<p id="final">${generateMessage(words)}</p>`;
     closingElement.setAttribute("style", "display: block");
     intro.setAttribute("style", "display: none");
-    
-    message.innerHTML = `<p id="final">${generateMessage(words)}</p>`;
     message.setAttribute("style", "display: block");
+    progressBar.setAttribute("style", "display: none");
+    }
+    else{
+        null;
+    }
+    
 };   
 
 

@@ -22,3 +22,7 @@
 button {
     position: fixed;
 }
+
+#progress {
+    padding-top: 20px;
+}

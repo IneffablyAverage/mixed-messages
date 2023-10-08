@@ -6,7 +6,6 @@ async function getWordByType(type){
         const response = await fetch(`http://localhost:3000/proxy/${type}`);
 
         let word = await response.json();
-
         return word;
     } catch (error) {
         console.error('OBVIOUS Error:', error);
